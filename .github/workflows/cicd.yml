@@ -98,5 +98,14 @@ jobs:
 
       - name: Deploying with Helm
         run: |
+          helm upgrade --install minepulse ./helm/minepulse \
+            -n minepulse \
+            --create-namespace \
+            --set backend.tag=${{ github.sha }} \
+            --set frontend.tag=${{ github.sha }} \
+            --set backend.image=ghcr.io/${{ github.repository_owner }}/minepulse-backend \
+            --set frontend.image=ghcr.io/${{ github.repository_owner }}/minepulse-frontend \
+            --set monitoring.serviceMonitor.enabled=false
+        run: |
           helm upgrade --install minepulse ./helm/minepulse -n minepulse --create-namespace --set backend.tag=${{ github.sha }} --set frontend.tag=${{ github.sha }} --set backend.image=ghcr.io/${{ github.repository_owner }}/minepulse-backend --set frontend.image=ghcr.io/${{ github.repository_owner }}/minepulse-frontend
             
