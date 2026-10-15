@@ -1,4 +1,3 @@
-
 # MinePulse — DevOps Capstone Project
 
 ## Student Details
@@ -54,6 +53,16 @@ DevOps_Capstone_Project/
 ├── k8s/
 ├── monitoring/
 ├── screenshots/
+│   ├── 01-dashboard.png
+│   ├── 02-dashboard.png
+│   ├── 03-dashboard.png
+│   ├── 04-dashboard.png
+│   ├── 05-dashboard.png
+│   ├── 06-API documentation.png
+│   ├── 07-Docker status.png
+│   ├── 08-pytest.png
+│   ├── 09-prometheus-targets.png
+│   └── 10-grafana-kubernetes-dashboard.png
 ├── scripts/
 ├── terraform/
 ├── docker-compose.yaml
@@ -72,8 +81,8 @@ docker compose ps
 
 ### Application URLs
 
-- **Frontend:** http://localhost:1919
-- **Backend API Documentation:** http://localhost:3010/docs
+- **Frontend:** [http://localhost:1919](http://localhost:1919)
+- **Backend API Documentation:** [http://localhost:3010/docs](http://localhost:3010/docs)
 
 To stop the application:
 
@@ -145,7 +154,11 @@ The intended pipeline includes:
 8. Deploying to a temporary Kind cluster using Helm.
 
 The complete pipeline must be verified in the project's own GitHub repository.
+## Git Workflow Screenshot
 
+![GitHub Actions CI/CD Workflow](screenshots/11-git-workflow.png)
+
+The project uses Git and GitHub for version control. GitHub Actions is configured to automate testing, frontend builds, Docker image builds, security scanning, and deployment steps. Refer to the Actions tab to verify the actual workflow run status.
 ## Application Screenshots
 
 ### 1. Dashboard
@@ -180,6 +193,16 @@ The complete pipeline must be verified in the project's own GitHub repository.
 
 ![Pytest Results](screenshots/08-pytest.png)
 
+## Monitoring Screenshots
+
+### 9. Prometheus Targets
+
+![Prometheus Targets](screenshots/09-prometheus-targets.png)
+
+### 10. Grafana Kubernetes Dashboard
+
+![Grafana Kubernetes Dashboard](screenshots/10-grafana-kubernetes-dashboard.png)
+
 ## Kubernetes and Helm
 
 Kubernetes manifests are maintained in `k8s/`, and the Helm chart is maintained in `helm/minepulse/`.
@@ -200,7 +223,7 @@ The deployment, namespaces, services, and container image references must be val
 
 The `monitoring/` directory contains Prometheus-related configuration.
 
-Prometheus targets and Grafana dashboards must be tested against the running application before claiming that monitoring is operational.
+Prometheus targets and Grafana dashboards should be checked against the running application. Verify target health and component stability before claiming that the entire monitoring stack is healthy.
 
 ## Terraform and AWS
 
@@ -251,20 +274,8 @@ kubectl get nodes
 kubectl get pods -A
 ```
 
-## Project Status
 
-- [x] Docker Compose configuration validated
-- [x] Backend tests passed: 5 tests
-- [ ] Frontend production build verified
-- [ ] GitHub Actions pipeline verified
-- [ ] GHCR image publishing verified
-- [ ] Trivy security scans verified
-- [ ] Kubernetes and Helm deployment verified
-- [ ] Prometheus and Grafana monitoring verified
-- [ ] AWS infrastructure provisioning verified
 
 ## Author
 
-**Mathan Kalra**
-
-Replace `YOUR_ROLL_NUMBER` and `YOUR_BATCH` with your correct details before submission.
+**Manthan Kalra**
