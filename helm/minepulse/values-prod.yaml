@@ -1,0 +1,10 @@
+frontend: 
+  image: ghcr.io/manthan1709/minepulse-frontend
+backend:
+  image: ghcr.io/manthan1709/minepulse-backend
+replicaCount: 4
+ingress:
+  enabled: true
+  host: devops-capstone-minepulse.codemorph.me
+hpa:
+  enable: true

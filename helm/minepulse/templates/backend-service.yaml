@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minepulse-minepulse-backend
+  labels: {app: minepulse-backend}
+spec: 
+  selector: {app: minepulse-backend}
+  ports:
+    - port: 3019
+      targetPort: 3019
+      name: http

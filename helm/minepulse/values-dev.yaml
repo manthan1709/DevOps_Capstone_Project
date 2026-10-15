@@ -1,0 +1,6 @@
+replicaCount: 2
+ingress:
+  enabled: true
+  host: minepulse.local
+hpa:
+  enabled: false

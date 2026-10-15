@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: minepulse-frontend
+spec:
+  selector: 
+    app: minepulse-frontend
+  ports:
+    - port: 3030
+      targetPort: 3030
